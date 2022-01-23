@@ -122,7 +122,7 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit("**🔐DRAGON-USERBOT** `Finishing`")
+    await event.edit("**🔐 DRAGON-USERBOT** `Finishing`")
     await asyncio.sleep(1)
     await event.edit("**🔐 DRAGON-USERBOT** `Restarting`")
     await asyncio.sleep(1)
@@ -196,7 +196,7 @@ async def upstream(event):
 
     if changelog == "" and force_update is False:
         await event.edit(
-            f"\n🔐 DRAGON-USERBOT : \n"
+            f"\n**🔐 DRAGON-USERBOT :** \n"
             f"Is Up to Date By : **[MAIN](https://t.me/triplenineee)** \n "
         )
         await asyncio.sleep(20)
