@@ -182,16 +182,8 @@ async def pingme(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(
-        f" ❖  ✦   ─『**PING**』─   ✦  ❖\n"
-        f"╔╦══••✠•❀❀•✠••══╦╗ \n"
-        f"📡 **Ping :**   "
-        f"`%sms` \n"
-        f"⏲️ **Uptime :** "    
-        f"`{uptime}` \n"
-        f"🤴 **Owner :**` {ALIVE_NAME}`\n" 
-        f"╚╩══••✠•❀❀•✠••══╩╝ " % (duration)
-    )
-
+                   f"**᯽──『** `%sms` ** 』──᯽** " % (duration)
+                    )
 
 @register(outgoing=True, pattern="^.kecepatan$")
 async def speedtst(spd):
