@@ -229,16 +229,16 @@ async def upstream(event):
             "`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`"
         )
     else:
-        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Connecting . . ! 1%`")
+        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Connecting`")
         await asyncio.sleep(3)
-        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Create New File . . ! 20%`")
-        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Extrac arcive . . ! 35%`")
+        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Create New File`")
+        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Extrac arcive`")
         await asyncio.sleep(3)
-        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Instal All Modules . . .! 77%`")
+        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Instal All Modules`")
         await asyncio.sleep(3)
-        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Finishing . . ! 90%`")
+        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Finishing`")
         await asyncio.sleep(3)
-        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Installing Complited . . ! 100%`")
+        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Installing Complited`")
         await asyncio.sleep(3)
 
     if conf == "now":
