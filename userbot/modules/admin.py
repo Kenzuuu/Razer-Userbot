@@ -228,9 +228,9 @@ async def ban(bon):
         return
 
     # Announce that we're going to whack the pest
-    await bon.edit("🚫 **BANNED **\n\n" "⚙️ Starting Process . . ! ☑️)
+    await bon.edit("🚫 **BANNED **\n\n" "⚙️ Starting Process . . ! ☑️")
     await sleep(2)
-    await bon.edit("🚫 **BANNED **\n\n" "⚙️ Starting Process . . ! ✅)
+    await bon.edit("🚫 **BANNED **\n\n" "⚙️ Starting Process . . ! ✅")
 
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
