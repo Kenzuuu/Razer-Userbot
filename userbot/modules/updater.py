@@ -241,7 +241,7 @@ async def upstream(event):
         await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Installing Complited . . ! 100%`")
         await asyncio.sleep(3)
 
- if conf == "now":
+    if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
         await event.delete()
