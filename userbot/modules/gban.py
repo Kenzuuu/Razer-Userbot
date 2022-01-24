@@ -20,7 +20,10 @@ async def get_full_user(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit("`🔐 User ID required`")
+            await event.edit(
+                             f"**⚠️ Warning . . !** /n/n"
+                             f"👷`User ID required!`"
+                            )
             return
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
@@ -34,7 +37,7 @@ async def get_full_user(event):
             user_obj = await event.client.get_entity(user)
         except Exception as err:
             return await event.edit(
-                "`🔐 Errors Found, Report to :` **[MAIN](https://t.me/triplenineee)** ", str(err)
+                "**⚠️ Warning . . !**\n\n`Errors Found, Report to :` **[MASTER](https://t.me/triplenineee)** ", str(err)
             )
     return user_obj, extra
 
@@ -72,9 +75,9 @@ async def handler(tele):
                                 tele.chat_id, guser.id, view_messages=False
                             )
                             await tele.reply(
-                                f"**🔐 Banned user found** \n"
-                                f"**▪️ User**: [{guser.id}](tg://user?id={guser.id})\n"
-                                f"**▪️ Action**  : `Banned`"
+                                f"**🚫 BANNED USER :** \n\n"
+                                f"**👷 User**: [{guser.id}](tg://user?id={guser.id})\n"
+                                f"**⚙️ Action**  : `Banned` ✅"
                             )
                         except BaseException:
                             return
@@ -87,11 +90,17 @@ async def gben(userbot):
     sender = await dc.get_sender()
     me = await dc.client.get_me()
     if not sender.id == me.id:
-        dark = await dc.reply("`🔐 Starting Gban`")
+        dark = await dc.reply(
+                              f"**🚫 GLOBAL BAN** \n\n "
+                              f"⚙️ Starting Action . . !")
     else:
-        dark = await dc.edit("`🔐 Waiting Gban`")
+        dark = await dc.edit(
+                             f"**🚫 GLOBAL BAN** \n\n "
+                             f"`⚙️ Waiting Process. . !`")
     me = await userbot.client.get_me()
-    await dark.edit(f"`🔐 Processing Gban`")
+    await dark.edit(
+                    f"**🚫 GLOBAL BAN** \n\n "
+                    f"`⚙️ Processing Gban . . !`")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await userbot.get_chat()
@@ -109,11 +118,11 @@ async def gben(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await dark.edit(f"`🔐 Stopping Process`")
+        return await dark.edit(f"`❌ Stopping Process`")
     if user:
         if user.id in DEVS:
             return await dark.edit(
-                f"`🔐 Stoping process By` **[MAIN](https://t.me/triplenineee)** "
+                f"`❌ Stoping process By :` **[MASTER](https://t.me/triplenineee)** "
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
