@@ -114,6 +114,17 @@ async def typewriter(typew):
         "**GAK KEREN LO KEK BEGITU GOBLOK, KELUARGA LU BAWA SINI GUA LUDAHIN SATU-SATU, SETDAH!!!**"
     )
 
+@register(outgoing=True, pattern=r"^\.kenzu(?: |$)(.*)")
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("**Nama saya Kenzu**")
+    sleep(1.5)
+    await typew.edit("**Umur 20**")
+    sleep(1.5)
+    await typew.edit("**Tinggal di rumah lah**")
+    sleep(1.5)
+    await typew.edit("Developer of @ZhuXRobot")
+    sleep(2)
 
 CMD_HELP.update(
     {
