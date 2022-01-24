@@ -75,10 +75,10 @@ async def handler(tele):
                                 tele.chat_id, guser.id, view_messages=False
                             )
                             await tele.reply(
-                                f"**🚫 BANNED USER :** \n\n"
-                                f"**👷 User**: [{guser.id}](tg://user?id={guser.id})\n"
-                                f"**⚙️ Action**  : `Banned` ✅"
-                            )
+                                             f"**🚫 BANNED USER :** \n\n"
+                                             f"**👷 User**: [{guser.id}](tg://user?id={guser.id})\n"
+                                             f"**⚙️ Action**  : `Banned` ✅"
+                                             )
                         except BaseException:
                             return
 
@@ -118,11 +118,11 @@ async def gben(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await dark.edit(f"`❌ Stopping Process`")
+        return await dark.edit(f"❌ `Stopping Process`")
     if user:
         if user.id in DEVS:
             return await dark.edit(
-                f"`❌ Stoping process, He is my` **[Master](https://t.me/triplenineee)** "
+                f"❌ `Stoping process, He is my` **[Master](https://t.me/triplenineee)** "
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
@@ -175,11 +175,12 @@ async def gunben(userbot):
     else:
         dark = await dc.edit(
                              f"**🚫 UNGLOBAL BAN** \n\n "
-                              f"⚙️ `Waiting Action . . !`")
+                              f"⚙️ `Waiting Proces . . !`")
     me = await userbot.client.get_me()
     await dark.edit(
-        f"`🔐 Starting Process Unban`"
-    )
+                    f"**🚫 UNGLOBAL BAN** \n\n "
+                    f"⚙️ `Processing Ungban. . !`")
+    
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await userbot.get_chat()
