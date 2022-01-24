@@ -122,7 +122,7 @@ async def gben(userbot):
     if user:
         if user.id in DEVS:
             return await dark.edit(
-                f"`❌ Stoping process By :` **[MASTER](https://t.me/triplenineee)** "
+                f"`❌ Stoping process, He is my` **[Master](https://t.me/triplenineee)** "
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
@@ -141,20 +141,24 @@ async def gben(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await dark.edit(f"`🔐 Gban activated By :` **[MAIN](https://t.me/triplenineee)**")
+                await dark.edit(
+                                f"**🚫 GLOBAL BAN** \n\n "
+                                f"⚙️ `Process activated By :` **[MASTER](https://t.me/triplenineee)**")
             except BaseException:
                 b += 1
     else:
-        await dark.edit(f"`🔐 Reply message required`")
+        await dark.edit(
+                        f"**🚫 GLOBAL BAN** \n\n "
+                        f"📩`Reply message required`")
     try:
         if gmute(user.id) is False:
             return await dark.edit(
-                f"🔐 `This user has been banned `"
+                f"❌`This user has been banned `"
             )
     except BaseException:
         pass
     return await dark.edit(
-        f"**🔐 DRAGON SECURITY**\n━━━━━━━━━━━━━━━━━\n▪️ **Request:** `{ALIVE_NAME}`\n▪️ **User:** [{user.first_name}](tg://user?id={user.id})\n▪️ **Action :** `Global Banned`\n━━━━━━━━━━━━━━━━━"
+        f"**🚫 GLOBAL BAN**\n\n🤴 **Request:** `{ALIVE_NAME}`\n👷 **User:** [{user.first_name}](tg://user?id={user.id})\n⚙️ **Action :** `Global Banned!` ✅"
     )
 
 
@@ -165,9 +169,13 @@ async def gunben(userbot):
     sender = await dc.get_sender()
     me = await dc.client.get_me()
     if not sender.id == me.id:
-        dark = await dc.reply("`🔐 Starting Ugnban`")
+        dark = await dc.reply(
+                              f"**🚫 UNGLOBAL BAN** \n\n "
+                              f"⚙️ `Starting Action . . !`")
     else:
-        dark = await dc.edit("`🔐 Waiting Ungban`")
+        dark = await dc.edit(
+                             f"**🚫 UNGLOBAL BAN** \n\n "
+                              f"⚙️ `Waiting Action . . !`")
     me = await userbot.client.get_me()
     await dark.edit(
         f"`🔐 Starting Process Unban`"
@@ -189,11 +197,11 @@ async def gunben(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await dark.edit("`🔐 Terminate Process`")
+        return await dark.edit("❌ `Stopping Process`")
     if user:
         if user.id in DEVS:
             return await dark.edit(
-                "🔐 `Terminate Process By :` **[MAIN](https://t.me/triplenineee)**"
+                "❌ `Stopping process, He is my` **[Master](https://t.me/triplenineee)**"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute
@@ -212,20 +220,24 @@ async def gunben(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await dark.edit(f"`🔐 Process Ungban User `")
+                await dark.edit(
+                                f"**🚫 UNGLOBAL BAN** \n\n "
+                                f"⚙️ `Process Ungban User `")
             except BaseException:
                 b += 1
     else:
-        await dark.edit("`🔐 Reply message Required`")
+        await dark.edit(
+                        f"**🚫 GLOBAL BAN** \n\n "
+                        f"`📩 Reply message Required`")
     try:
         if ungmute(user.id) is False:
             return await dark.edit(
-                "🔐 Users are not in the black list "
+                "❌ Users are not in the black list "
             )
     except BaseException:
         pass
     return await dark.edit(
-        f"**Request By :** `{ALIVE_NAME}`\n**For User:** [{user.first_name}](tg://user?id={user.id})\n**Action:**`Ungban User`"
+        f"🤴 **Request By :** `{ALIVE_NAME}`\n👷 **For User:** [{user.first_name}](tg://user?id={user.id})\n⚙️ **Action:**`Ungban User` ✅"
     )
 
 
