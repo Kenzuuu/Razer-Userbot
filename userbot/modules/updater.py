@@ -197,7 +197,7 @@ async def upstream(event):
     if changelog == "" and force_update is False:
         await event.edit(
             f"\n⚙️** DRAGON-USERBOT :** \n\n"
-            f"🛠️ Update By : **[MASTER](https://t.me/triplenineee)** \n "
+            f"🛠️ Up to Date, info: **[HERE](https://t.me/triplenineee)** \n "
         )
         await asyncio.sleep(20)
         await event.delete()
