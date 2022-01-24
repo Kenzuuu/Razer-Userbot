@@ -33,11 +33,11 @@ async def _(event):
         r_msg = await event.get_reply_message()
         if r_msg.media:
             bot_api_file_id = pack_bot_file_id(r_msg.media)
-            await event.edit("🔐 Group ID : \n`{}`\n🔐 ID From User : \n`{}`\n 🔐API Bot ID : `{}`".format(str(event.chat_id), str(r_msg.from_id), bot_api_file_id))
+            await event.edit("⚙️ Group ID : \n`{}`\n🔐 ID From User : \n`{}`\n 🔐API Bot ID : `{}`".format(str(event.chat_id), str(r_msg.from_id), bot_api_file_id))
         else:
             await event.edit("ID Grup: `{}`\nID Dari Pengguna : `{}`".format(str(event.chat_id), str(r_msg.from_id)))
     else:
-        await event.edit("🔐 ID Grup: `{}`".format(str(event.chat_id)))
+        await event.edit("⚙️ ID Grup: `{}`".format(str(event.chat_id)))
 
 
 @register(outgoing=True, pattern="^.link(?: |$)(.*)")
@@ -74,7 +74,7 @@ async def _(event):
     try:
         async for x in bot.iter_participants(chat, filter=ChannelParticipantsBots):
             if isinstance(x.participant, ChannelParticipantAdmin):
-                mentions += "\n ⚜️ [{}](tg://user?id={}) `{}`".format(
+                mentions += "\n ⚙️ [{}](tg://user?id={}) `{}`".format(
                     x.first_name, x.id, x.id)
             else:
                 mentions += "\n [{}](tg://user?id={}) `{}`".format(
