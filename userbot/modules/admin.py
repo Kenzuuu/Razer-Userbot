@@ -228,7 +228,9 @@ async def ban(bon):
         return
 
     # Announce that we're going to whack the pest
-    await bon.edit("`🔐 Dragon Starting ban.`")
+    await bon.edit("🚫 **BANNED **\n\n" "⚙️ Starting Process . . ! ☑️)
+    await sleep(2)
+    await bon.edit("🚫 **BANNED **\n\n" "⚙️ Starting Process . . ! ✅)
 
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
@@ -248,18 +250,18 @@ async def ban(bon):
     # Shout out the ID, so that fedadmins can fban later
     if reason:
         await bon.edit(
-            f"**🔐 BANNED**\n`▪️User :` [{user.first_name}](tg://user?id={user.id})\n`▪️ID:` `{str(user.id)}` Is Banned ✅\n▪️`Reason:` {reason}"
+            f"**🚫 BANNED**\n\n👷 **User :** `[{user.first_name}](tg://user?id={user.id})`\n🆔 : `{str(user.id)}` Is Banned ✅\n⛔ **Reason:** {reason}"
         )
     else:
         await bon.edit(
-            f"**🔐 BANNED**\n`▪️User :` [{user.first_name}](tg://user?id={user.id})\n`▪️ID:` `{str(user.id)}` Is Banned ✅"
+            f"**🚫 BANNED**\n\n👷 **User :** `[{user.first_name}](tg://user?id={user.id})`\n🆔 :`{str(user.id)}` Is Banned ✅"
         )
     # Announce to the logging group if we have banned the person
     # successfully!
     if BOTLOG:
         await bon.client.send_message(
             BOTLOG_CHATID,
-            "**🔐 BANNED**\n"
+            "**🚫 BANNED**\n"
             f"▪️USER: [{user.first_name}](tg://user?id={user.id})\n"
             f"▪️GROUP: {bon.chat.title}(`{bon.chat_id}`)",
         )
@@ -277,7 +279,7 @@ async def nothanos(unbon):
         return await unbon.edit(NO_ADMIN)
 
     # If everything goes well...
-    await unbon.edit("`🔐 Dragon staring Unban.`")
+    await unbon.edit("`⚙️ Staring Unban. . !`")
 
     user = await get_user_from_event(unbon)
     user = user[0]
@@ -286,19 +288,19 @@ async def nothanos(unbon):
 
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await unbon.edit("```🔐 Unban Successfully Done!✅```")
+        await unbon.edit("```⚙️ Unban Done . . ! ✅```")
         await sleep(3)
         await unbon.delete()
 
         if BOTLOG:
             await unbon.client.send_message(
                 BOTLOG_CHATID,
-                "**🔐 UNBAN**\n"
+                "**⚙️ UNBAN**\n"
                 f"▪️USER: [{user.first_name}](tg://user?id={user.id})\n"
                 f"▪️GROUP: {unbon.chat.title}(`{unbon.chat_id}`)",
             )
     except UserIdInvalidError:
-        await unbon.edit("`🔐 Looks like an error has occurred!`")
+        await unbon.edit("`❌ Looks like an error has occurred!`")
 
 
 @register(outgoing=True, pattern=r"^\.mute(?: |$)(.*)")
@@ -326,33 +328,33 @@ async def spider(spdr):
 
     if user.id == self_user.id:
         return await spdr.edit(
-            "`🔐 Can't Silence Yourself...\n(ヘ･_･)ヘ┳━┳`"
+            "`❌ Can't Silence Yourself...\n(ヘ･_･)ヘ┳━┳`"
         )
 
     # If everything goes well, do announcing and mute
-    await spdr.edit("`🔐 Has been muted!`")
+    await spdr.edit("`⚙️ Has been muted . . !` 🔇")
     if mute(spdr.chat_id, user.id) is False:
-        return await spdr.edit("🔐 `Error! User Already Muted.`")
+        return await spdr.edit("❌ `Error! User Already Muted. . ! `🔇")
     else:
         try:
             await spdr.client(EditBannedRequest(spdr.chat_id, user.id, MUTE_RIGHTS))
 
             # Announce that the function is done
             if reason:
-                await spdr.edit(f"**🔐 Has been muted!✅**\n**▪️Reason:** `{reason}`")
+                await spdr.edit(f"**⚙️ Has been muted . . !** 🔇\n**▪️Reason:** `{reason}`")
             else:
-                await spdr.edit("`🔐 Has been muted!✅`")
+                await spdr.edit("`⚙️ Has been muted . . !` 🔇")
 
             # Announce to logging group
             if BOTLOG:
                 await spdr.client.send_message(
                     BOTLOG_CHATID,
-                    "**🔐 MUTE**\n"
+                    "**⚙️ MUTE**\n"
                     f"▪️USER: [{user.first_name}](tg://user?id={user.id})\n"
                     f"▪️GROUP: {spdr.chat.title}(`{spdr.chat_id}`)",
                 )
         except UserIdInvalidError:
-            return await spdr.edit("`🔐 There is an error!`")
+            return await spdr.edit("`❌ There is an error!`")
 
 
 @register(outgoing=True, pattern=r"^\.unmute(?: |$)(.*)")
@@ -373,28 +375,28 @@ async def unmoot(unmot):
         return await unmot.edit(NO_SQL)
 
     # If admin or creator, inform the user and start unmuting
-    await unmot.edit("```🔐 Unmuting...```")
+    await unmot.edit("```⚙️ Unmuting . . ! 🔊```")
     user = await get_user_from_event(unmot)
     user = user[0]
     if not user:
         return
 
     if unmute(unmot.chat_id, user.id) is False:
-        return await unmot.edit("`🔐 Error!  User No Longer Mute.`")
+        return await unmot.edit("`❌ Error!  User No Longer Mute. . !` 🔊")
     else:
 
         try:
             await unmot.client(EditBannedRequest(unmot.chat_id, user.id, UNBAN_RIGHTS))
-            await unmot.edit("```🔐 Successfully Unmute!  Users No Longer Mute ✅```")
+            await unmot.edit("```⚙️ Successfully Unmute!  Users No Longer Mute 🔊```")
             await sleep(3)
             await unmot.delete()
         except UserIdInvalidError:
-            return await unmot.edit("`🔐 There is an error!`")
+            return await unmot.edit("`❌ There is an error!`")
 
         if BOTLOG:
             await unmot.client.send_message(
                 BOTLOG_CHATID,
-                "**🔐 UNMUTE**\n"
+                "**⚙️ UNMUTE**\n"
                 f"▪️USER: [{user.first_name}](tg://user?id={user.id})\n"
                 f"▪️GROUP: {unmot.chat.title}(`{unmot.chat_id}`)",
             )
@@ -454,20 +456,20 @@ async def ungmoot(un_gmute):
         return
 
     # If pass, inform and start ungmuting
-    await un_gmute.edit("```🔐 Unlock User Global Mute...```")
+    await un_gmute.edit("```⚙️ Unlock User Global Mute... 🔊```")
 
     if ungmute(user.id) is False:
         await un_gmute.edit("`Kesalahan! Pengguna Sedang Tidak Di Gmute.`")
     else:
         # Inform about success
-        await un_gmute.edit("```🔐 Success!  Users No Longer Mute ✅```")
+        await un_gmute.edit("```⚙️ Success!  Users No Longer Mute 🔊```")
         await sleep(3)
         await un_gmute.delete()
 
         if BOTLOG:
             await un_gmute.client.send_message(
                 BOTLOG_CHATID,
-                "**🔐 UNGMUTE**\n"
+                "**⚙️ UNGMUTE**\n"
                 f"▪️USER: [{user.first_name}](tg://user?id={user.id})\n"
                 f"▪️GROUP: {un_gmute.chat.title}(`{un_gmute.chat_id}`)",
             )
@@ -495,19 +497,19 @@ async def gspider(gspdr):
         return
 
     # If pass, inform and start gmuting
-    await gspdr.edit("`🔐 Successfully Mute User!`")
+    await gspdr.edit("`⚙️ Successfully Mute User . . ! 🔇`")
     if gmute(user.id) is False:
-        await gspdr.edit("`🔐 Error!  User Already Muted.`")
+        await gspdr.edit("`🔐 Error!  User Already Muted . . ! 🔇`")
     else:
         if reason:
-            await gspdr.edit(f"**🔐 Mute Globally! ✅**\n**▪️Reason:** `{reason}`")
+            await gspdr.edit(f"**⚙️ Mute Globally . . ! 🔇**\n**▪️Reason:** `{reason}`")
         else:
-            await gspdr.edit("`🔐 Successfully Mute Users Globally! ✅`")
+            await gspdr.edit("`⚙️ Successfully Mute Users Globally . . ! 🔇`")
 
         if BOTLOG:
             await gspdr.client.send_message(
                 BOTLOG_CHATID,
-                "**🔐 GLOBALMUTE**\n"
+                "**⚙️ GLOBALMUTE**\n"
                 f"▪️USER: [{user.first_name}](tg://user?id={user.id})\n"
                 f"▪️GROUP: {gspdr.chat.title}(`{gspdr.chat_id}`)",
             )
@@ -518,10 +520,10 @@ async def rm_deletedacc(show):
 
     con = show.pattern_match.group(1).lower()
     del_u = 0
-    del_status = "`🔐 Can't Find Deleted Accounts, Clean Groups`"
+    del_status = "`⚙️ Can't Find Deleted Accounts, Clean Groups`"
 
     if con != "clean":
-        await show.edit("`🔐 Looking for Ghost/Deleted/Zombie Accounts...`")
+        await show.edit("`⚙️ Looking for Ghost/Deleted/Zombie Accounts...`")
         async for user in show.client.iter_participants(show.chat_id):
 
             if user.deleted:
@@ -529,7 +531,7 @@ async def rm_deletedacc(show):
                 await sleep(1)
         if del_u > 0:
             del_status = (
-                f"`🔐 Find` **{del_u}** `Ghost/Deleted/Zombie Accounts In This Group`,"
+                f"`⚙️ Find` **{del_u}** `Ghost/Deleted/Zombie Accounts In This Group`,"
                 "\n▪️Clean It Using Command .zombies clean`")
         return await show.edit(del_status)
 
@@ -540,7 +542,7 @@ async def rm_deletedacc(show):
 
     # Well
     if not admin and not creator:
-        return await show.edit("`🔐 Sorry, Not Admin Here!`")
+        return await show.edit("`❌ Sorry, Not Admin Here!`")
 
     await show.edit("`▪️Deleting Deleted Accounts...\n▪️Please Wait In Process. . .`")
     del_u = 0
@@ -553,7 +555,7 @@ async def rm_deletedacc(show):
                     EditBannedRequest(show.chat_id, user.id, BANNED_RIGHTS)
                 )
             except ChatAdminRequiredError:
-                return await show.edit("`🔐 Don't Have Banned Permission In This Group`")
+                return await show.edit("`❌ Don't Have Banned Permission In This Group`")
             except UserAdminInvalidError:
                 del_u -= 1
                 del_a += 1
@@ -561,12 +563,12 @@ async def rm_deletedacc(show):
             del_u += 1
 
     if del_u > 0:
-        del_status = f"`🔐 Cleaning` **{del_u}** `Deleted Accounts`"
+        del_status = f"`⚙️ Cleaning` **{del_u}** `Deleted Accounts`"
 
     if del_a > 0:
         del_status = (
-            f"🔐 Cleaning` **{del_u}** `Deleted Accounts "
-            f"\n**{del_a}** `🔐 Deleted Account Admin Cannot Be Delete.`"
+            f"⚙️ Cleaning` **{del_u}** `Deleted Accounts "
+            f"\n**{del_a}** `❌ Zombies Admin Cannot Be Delete.`"
         )
     await show.edit(del_status)
     await sleep(2)
@@ -575,7 +577,7 @@ async def rm_deletedacc(show):
     if BOTLOG:
         await show.client.send_message(
             BOTLOG_CHATID,
-            "**🔐 CLEANING**\n"
+            "**⚙️ CLEANING**\n"
             f"▪️Cleaning **{del_u}** Deleted Account!"
             f"\n▪️GRUP: {show.chat.title}(`{show.chat_id}`)",
         )
@@ -614,7 +616,7 @@ async def pin(msg):
     to_pin = msg.reply_to_msg_id
 
     if not to_pin:
-        return await msg.edit("`🔐 Please Reply To Message To Pin.`")
+        return await msg.edit("`⚙️ Please Reply To Message To Pin.`")
 
     options = msg.pattern_match.group(1)
 
@@ -628,7 +630,7 @@ async def pin(msg):
     except BadRequestError:
         return await msg.edit(NO_PERM)
 
-    await msg.edit("`🔐 Successfully Pinned!`")
+    await msg.edit("`⚙️ Successfully Pinned!`")
     await sleep(2)
     await msg.delete()
 
@@ -637,7 +639,7 @@ async def pin(msg):
     if BOTLOG:
         await msg.client.send_message(
             BOTLOG_CHATID,
-            "**🔐 PINED**\n"
+            "**⚙️ PINED**\n"
             f"▪️ADMIN: [{user.first_name}](tg://user?id={user.id})\n"
             f"▪️GROUP: {msg.chat.title}(`{msg.chat_id}`)\n"
             f"▪️NOTIF: {not is_silent}",
@@ -657,9 +659,9 @@ async def kick(usr):
 
     user, reason = await get_user_from_event(usr)
     if not user:
-        return await usr.edit("`🔐 Cannot Find User.`")
+        return await usr.edit("`❌ Cannot Find User.`")
 
-    await usr.edit("`🔐 Doing the Kick....`")
+    await usr.edit("`🚫 Doing the Kick....`")
 
     try:
         await usr.client.kick_participant(usr.chat_id, user.id)
@@ -669,17 +671,16 @@ async def kick(usr):
 
     if reason:
         await usr.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) **Telah Dikick Dari Grup✅**\n**Alasan:** `{reason}`"
+            f"👷 **User :** [{user.first_name}](tg://user?id={user.id}) `has been kicked` ✅ \n⛔ Reason:** `{reason}`"
         )
     else:
-        await usr.edit(f"[{user.first_name}](tg://user?id={user.id}) **Telah Dikick Dari Grup✅**")
+        await usr.edit(f"👷 **User :** [{user.first_name}](tg://user?id={user.id}) `has been kicked` ✅**")
         await sleep(5)
         await usr.delete()
-
     if BOTLOG:
         await usr.client.send_message(
             BOTLOG_CHATID,
-            "**🔐 KICK**\n"
+            "**⚙️ KICK**\n"
             f"▪️USER: [{user.first_name}](tg://user?id={user.id})\n"
             f"▪️GROUP: {usr.chat.title}(`{usr.chat_id}`)\n",
         )
@@ -715,7 +716,7 @@ async def get_users(show):
     try:
         await show.edit(mentions)
     except MessageTooLongError:
-        await show.edit("🔐 `This Group Is Too Big Uploading User List As File`.")
+        await show.edit("⚙️ `This Group Is Too Big Uploading User List As File`.")
         file = open("userlist.txt", "w+")
         file.write(mentions)
         file.close()
@@ -744,7 +745,7 @@ async def get_user_from_event(event):
             user = int(user)
 
         if not user:
-            return await event.edit("`🔐 Type Username Or Reply To User!`")
+            return await event.edit("`❌ Type Username Or Reply To User!`")
 
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
@@ -806,7 +807,7 @@ async def get_usersdel(show):
         await show.edit(mentions)
     except MessageTooLongError:
         await show.edit(
-            "🔐 This Group Is Too Big, Uploading List of Deleted Accounts As File."
+            "⚙️ This Group Is Too Big, Uploading List of Deleted Accounts As File."
         )
         file = open("userlist.txt", "w+")
         file.write(mentions)
@@ -836,7 +837,7 @@ async def get_userdel_from_event(event):
             user = int(user)
 
         if not user:
-            return await event.edit("`🔐 Type username or reply to user!`")
+            return await event.edit("`❌ Type username or reply to user!`")
 
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
@@ -874,7 +875,7 @@ async def get_bots(show):
     mentions = f"<b>Daftar Bot Di {title}:</b>\n"
     try:
         if isinstance(show.to_id, PeerChat):
-            return await show.edit("`🔐 I heard that only Supergroups can have bots`")
+            return await show.edit("`❌ I heard that only Supergroups can have bots`")
         else:
             async for user in show.client.iter_participants(
                 show.chat_id, filter=ChannelParticipantsBots
