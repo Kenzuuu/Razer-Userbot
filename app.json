@@ -16,12 +16,12 @@
   "env": {
     "API_KEY": {
       "description": "Dapatkan Api Key di web my.telegram.org",
-      "value": "8620735"
+      "value": "8620735" ,
       "required": true
     },
     "API_HASH": {
       "description": "Dapatkan Api Hash Di Web my.telegram.org",
-      "value": "ef2e46f13b5865f0043e4efd3eb8a556"
+      "value": "ef2e46f13b5865f0043e4efd3eb8a556" ,
       "required": true
     },
      "STRING_SESSION": {
@@ -44,12 +44,12 @@
     },
     "BOTLOG_CHATID": {
       "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh : -1001234567890",
-      "value": "-1001599694313"
+      "value": "-1001599694313",
       "required": true
     },
     "G_BAN_LOGGER_GROUP": {
       "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh : -1001234567890",
-      "value": "-1001599694313"
+      "value": "-1001599694313" ,
       "required": true
     },
     "COUNTRY": {
