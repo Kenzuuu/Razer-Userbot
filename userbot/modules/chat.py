@@ -33,7 +33,7 @@ async def _(event):
         r_msg = await event.get_reply_message()
         if r_msg.media:
             bot_api_file_id = pack_bot_file_id(r_msg.media)
-            await event.edit("⚙️ Group ID : \n`{}`\n🔐 ID From User : \n`{}`\n 🔐API Bot ID : `{}`".format(str(event.chat_id), str(r_msg.from_id), bot_api_file_id))
+            await event.edit("⚙️ Group ID : \n`{}`\n👷 ID From User : \n`{}`\n 🤖 API Bot ID : `{}`".format(str(event.chat_id), str(r_msg.from_id), bot_api_file_id))
         else:
             await event.edit("ID Grup: `{}`\nID Dari Pengguna : `{}`".format(str(event.chat_id), str(r_msg.from_id)))
     else:
@@ -189,14 +189,14 @@ async def sedNinjaToggle(event):
 
 @register(pattern=".chatinfo(?: |$)(.*)", outgoing=True)
 async def info(event):
-    await event.edit("`🔐 Scanning Info`")
+    await event.edit("`⚙️ Scanning Info`")
     chat = await get_chatinfo(event)
     caption = await fetch_info(chat, event)
     try:
         await event.edit(caption, parse_mode="html")
     except Exception as e:
         print("Exception:", e)
-        await event.edit("`🔐 Error, Terminate By :` **[DRAGON](https://t.me/tripleneee)** ")
+        await event.edit("`❌ Error, Terminate By :` **[MASTER](https://t.me/tripleneee)** ")
     return
 
 
@@ -221,13 +221,13 @@ async def get_chatinfo(event):
         try:
             chat_info = await event.client(GetFullChannelRequest(chat))
         except ChannelInvalidError:
-            await event.edit("`🔐 Invalid Group / Channel `")
+            await event.edit("`⛔ Invalid Group / Channel `")
             return None
         except ChannelPrivateError:
-            await event.edit("`🔐 Unban required from Group / Channel`")
+            await event.edit("`⚙️ Unban required from Group / Channel`")
             return None
         except ChannelPublicGroupNaError:
-            await event.edit("`🔐 Group / Channel Not Found`")
+            await event.edit("`🚫 Group / Channel Not Found`")
             return None
         except (TypeError, ValueError) as err:
             await event.edit(str(err))
@@ -398,7 +398,7 @@ async def _(event):
         return
     to_add_users = event.pattern_match.group(1)
     if event.is_private:
-        await event.edit("`🔐 Can't Invite user here`")
+        await event.edit("`⛔ Can't Invite user here`")
     else:
         if not event.is_channel and event.is_group:
             # https://lonamiwebs.github.io/Telethon/methods/messages/add_chat_user.html
@@ -411,7 +411,7 @@ async def _(event):
                     ))
                 except Exception as e:
                     await event.reply(str(e))
-            await event.edit("`🔐 Successfully added user`")
+            await event.edit("`⚙️ Successfully added user`")
         else:
             # https://lonamiwebs.github.io/Telethon/methods/channels/invite_to_channel.html
             for user_id in to_add_users.split(" "):
@@ -422,7 +422,7 @@ async def _(event):
                     ))
                 except Exception as e:
                     await event.reply(str(e))
-            await event.edit("`🔐 Successfully added user`")
+            await event.edit("`⚙️ Successfully added user`")
 
 CMD_HELP.update({
     "chat":
