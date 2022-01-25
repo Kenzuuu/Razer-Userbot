@@ -71,7 +71,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             )
             return repo.__del__()
         await event.edit(
-                         "🛠️**UPDATING . . !**\n\n⚙️ `Waiting . . !`"
+                         "🛠️ **UPDATING . . !**\n\n⚙️ `Waiting . . !`"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -97,7 +97,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             return await event.delete()
         else:
             await event.edit(
-                "🛠️ **UPDATE** \n\n"" ⚙️ `successfully updated!`\n" "⏳ `Restarting . . !`"
+                "🛠️ **UPDATE** \n\n"" ⚙️ `successfully updated!`\n" "⏳ `Restarting`"
             )
             await asyncio.sleep(15)
             await event.delete()
@@ -122,17 +122,17 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit("**⚙️ DRAGON-USERBOT**\n\n" "⏳ `Finishing . . !`")
+    await event.edit("**⚙️ RAZER-USERBOT**\n\n" "⏳ `Finishing`")
     await asyncio.sleep(3)
-    await event.edit("**⚙️ DRAGON-USERBOT**\n\n" "⏳ `Restarting . . !`")
+    await event.edit("**⚙️ RAZER-USERBOT**\n\n" "⏳ `Restarting`")
     await asyncio.sleep(3)
-    await event.edit("**⚙️ DRAGON-USERBOT**\n\n" "⏳ `Starting Up . . !`")
+    await event.edit("**⚙️ RAZER-USERBOT**\n\n" "⏳ `Starting Up`")
     await asyncio.sleep(6)
     await event.delete()
 
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#UPDATE \n\n" "⚙️ **DRAGON-USERBOT :** `Update Done` ✅"
+            BOTLOG_CHATID, "#UPDATE \n\n" "⚙️ **RAZER-USERBOT :** `Update Done` ✅"
         )
         await asyncio.sleep(100)
         await event.delete()
@@ -146,7 +146,7 @@ async def update(event, repo, ups_rem, ac_br):
 @register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
-    await event.edit("**⚙️ DRAGON-USERBOT :**\n\n" "⏳ `Waiting for updates . . !`")
+    await event.edit("**⚙️ RAZER-USERBOT :**\n\n" "⏳ `Waiting for updates`")
     conf = event.pattern_match.group(1)
     off_repo = UPSTREAM_REPO_URL
     force_update = False
@@ -196,8 +196,8 @@ async def upstream(event):
 
     if changelog == "" and force_update is False:
         await event.edit(
-            f"\n⚙️** DRAGON-USERBOT :** \n\n"
-            f"🛠️ Up to Date, info: **[HERE](https://t.me/triplenineee)** \n "
+            f"\n⚙️** RAZER-USERBOT :** \n\n"
+            f"🛠️ Up to Date, info: **[MASTER](https://t.me/triplenineee)** \n"
         )
         await asyncio.sleep(20)
         await event.delete()
@@ -205,7 +205,7 @@ async def upstream(event):
 
     if conf is None and force_update is False:
         changelog_str = (
-            f"⚙️ `Dragon-Userbot Update` \n"
+            f"⚙️ `Razer-Userbot Update` \n"
         )
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
@@ -221,7 +221,7 @@ async def upstream(event):
         else:
             await event.edit(changelog_str)
         return await event.respond(
-            "🛠️ `Update By` :  **[MASTER](https://t.me/triplenineee)** "
+            "🛠️ `Update By` :  **[MASTER](https://t.me/triplenineee)**\n"
         )
 
     if force_update:
@@ -229,16 +229,16 @@ async def upstream(event):
             "`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`"
         )
     else:
-        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Connecting`")
+        await event.edit("⚙️ **Razer-Userbot**\n\n" "⏳ `Connecting`")
         await asyncio.sleep(3)
-        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Create New File`")
-        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Extrac arcive`")
+        await event.edit("⚙️ **Razer-Userbot**\n\n" "⏳ `Create New File`")
+        await event.edit("⚙️ **Razer-Userbot**\n\n" "⏳ `Extrac arcive`")
         await asyncio.sleep(3)
-        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Instal All Modules`")
+        await event.edit("⚙️ **Razer-Userbot**\n\n" "⏳ `Instal Modules`")
         await asyncio.sleep(3)
-        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Finishing`")
+        await event.edit("⚙️ **Razer-Userbot**\n\n" "⏳ `Finishing`")
         await asyncio.sleep(3)
-        await event.edit("⚙️ **Dragon-Userbot**\n\n" "⏳ `Installing Complited`")
+        await event.edit("⚙️ **Razer-Userbot**\n\n" "⏳ `Complited`")
         await asyncio.sleep(3)
 
     if conf == "now":
