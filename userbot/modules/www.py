@@ -82,10 +82,10 @@ async def redis(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(
-        f"**🤴 DRAGON**        \n"
+        f"**🔰 Razer**        \n"
         f" ━━━━━━━━━━━━━━━━━ \n"
         f"**📥 Kecepatan : ** '%sms'  \n"
-        f"**⚙️ Bot Name : ** `Dragon-Userbot` \n" 
+        f"**⚙️ Bot Name : ** `Razer-Userbot` \n" 
         f" ━━━━━━━━━━━━━━━━━ " % (duration)
     )
 
@@ -99,7 +99,7 @@ async def redis(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(
-        f"**🤴 `{ALIVE_NAME}`**\n"
+        f"**{ALIVE_NAME}**\n"
         f" ━━━━━━━━━━━━━━━━━ \n"
         f"📡 **-ꜱɪɢɴᴀʟ- :** "
         f"`%sms` \n"
@@ -126,7 +126,7 @@ async def redis(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(
-        f"**⚙️ Dragon-Userbot**\n"
+        f"**Razer-Userbot**\n"
         f" ━━━━━━━━━━━━━━━━━ \n"
         f"📡 __Signal__    __:__ "
         f"`%sms` \n"
@@ -188,7 +188,7 @@ async def pingme(pong):
 @register(outgoing=True, pattern="^.kecepatan$")
 async def speedtst(spd):
     """For .speed command, use SpeedTest to check server speeds."""
-    await spd.edit("**Sedang Menjalankan Tes Kecepatan Jaringan,Mohon Tunggu...**")
+    await spd.edit("`Connecting . . !`")
     test = Speedtest()
 
     test.get_best_server()
@@ -210,7 +210,7 @@ async def speedtst(spd):
         f"`{result['ping']}` \n"
         "🌏 **ISP:** "
         f"`{result['client']['isp']}` \n"
-        "⚙️ **BOT:** Dragon-Userbot"
+        "⚙️ **BOT:** Razer-Userbot"
     )
 
 
