@@ -124,7 +124,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/Kenzuuu/Dragon-Userbot")
+    "https://github.com/Kenzuuu/Razer-Userbot")
 UPSTREAM_REPO_BRANCH = os.environ.get(
     "UPSTREAM_REPO_BRANCH", "Kenzhu")
 
@@ -196,8 +196,8 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 YOUTUBE_API_KEY = os.environ.get(
     "YOUTUBE_API_KEY") or "AIzaSyACwFrVv-mlhICIOCvDQgaabo6RIoaK8Dg"
 
-# Untuk Perintah .nadaalive
-KYY_TEKS_KUSTOM = os.environ.get("Nada_TEKS_KUSTOM", "")
+# Untuk Perintah .zhualive
+KYY_TEKS_KUSTOM = os.environ.get("ZHU_TEKS_KUSTOM", "")
 
 # Untuk Mengubah Pesan Welcome
 START_WELCOME = os.environ.get("START_WELCOME", None)
@@ -233,14 +233,14 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/d19e6f87ca34fb99d0646.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/14462506b7fb22a8fe9ad.jpg"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/d19e6f87ca34fb99d0646.jpg"
+    "INLINE_PIC") or "https://telegra.ph/file/14462506b7fb22a8fe9ad.jpg"
 
 # Default emoji help
-EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌀"
+EMOJI_HELP = os.environ.get("EMOJI_HELP") or "⚙️"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -386,7 +386,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_file(BOTLOG_CHATID, ALIVE_LOGO, caption=f"🔐 **Dragon-Userbot** `Berhasil Diaktifkan`\n━━━━━━━━━━━━━━━━━━━\n🔐 **Bot of :** {ALIVE_NAME}\n🔐 **Dragon Ver. :** `7.0`\n━━━━━━━━━━━━━━━━━━━\n🔐 **Support : [HERE](https://t.me/narumisupport)**\n🔐 **Channel : [HERE](https://t.me/inibotsaya)**\n━━━━━━━━━━━━━━━━━━━")
+    await bot.send_file(BOTLOG_CHATID, ALIVE_LOGO, caption=f"⚙️ **Razer-Userbot** `Berhasil Diaktifkan`\n━━━━━━━━━━━━━━━━━━━\n🤴 **Bot of :** {ALIVE_NAME}\n⏳ **Razer Ver. :** `7.0`\n━━━━━━━━━━━━━━━━━━━\n🎭 **Support : [HERE](https://t.me/narumisupport)**\n🌐 **Channel : [HERE](https://t.me/inibotsaya)**\n━━━━━━━━━━━━━━━━━━━")
     return
 
 
@@ -517,7 +517,7 @@ with bot:
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"{START_WELCOME}\n\n🔐 Powered By : **[KENZU](https://t.me/triplenineee)**\n\n",
+                    f"{START_WELCOME}\n\n⚙️ Powered By : **[KENZU](https://t.me/triplenineee)**\n\n",
                     buttons=[
                         [
                             custom.Button.inline(
@@ -599,7 +599,7 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert = f"🤴 Name : {DEFAULTUSER}\n🤖 Bot Ver : 7.0\n🛠 Modules : {len(plugins)}\n🔐 Branch : Dragon-Userbot"
+                reply_pop_up_alert = f"👷 Name : {DEFAULTUSER}\n🤖 Bot Ver : 7.0\n🛠 Modules : {len(plugins)}\n🤴 Branch : KENZHU"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -616,9 +616,9 @@ with bot:
                     file=kyylogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("🔐 ᴀʟɪᴠᴇ", data="alive")],
-                        [custom.Button.inline("🔐 ᴘᴍᴘᴇʀᴍɪᴛ", data="permirt")],
-                        [custom.Button.inline("🔐 ᴘᴍʙᴏᴛ", data="pmbot")],
+                        [custom.Button.inline("⚙️ ᴀʟɪᴠᴇ", data="alive")],
+                        [custom.Button.inline("⚙️ ᴘᴍᴘᴇʀᴍɪᴛ", data="permirt")],
+                        [custom.Button.inline("⚙️ ᴘᴍʙᴏᴛ", data="pmbot")],
                         [custom.Button.inline(
                             "ɪɴʟɪɴᴇ ᴍᴏᴅᴇ ", data="inline_mode")],
                         [custom.Button.inline("ᴍᴇɴᴜ", data="kanan")],
@@ -642,10 +642,10 @@ with bot:
                     file=kyylogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("🔐 ᴜᴘᴅᴀᴛᴇ", data="pembaruan")],
-                        [custom.Button.inline("🔐 ᴘɪɴɢ", data="ping")],
-                        [custom.Button.inline("🔐 ᴄᴇᴋ ᴅʏɴᴏ", data="restart_bot")],
-                        [custom.Button.inline("🔐 <<ʟᴇꜰᴛ", data="settings")],
+                        [custom.Button.inline("⚙️ ᴜᴘᴅᴀᴛᴇ", data="pembaruan")],
+                        [custom.Button.inline("⚙️ ᴘɪɴɢ", data="ping")],
+                        [custom.Button.inline("⚙️ ᴄᴇᴋ ᴅʏɴᴏ", data="restart_bot")],
+                        [custom.Button.inline("⚙️ <<ʟᴇꜰᴛ", data="settings")],
                     ]
                 )
             else:
@@ -839,17 +839,14 @@ with bot:
                 AppPercentage = math.floor(
                     apps.get('quota_used') * 100 / quota)
                 text = (
-                    "🔐 **ɪɴꜰᴏʀᴍᴀsɪ ᴅʏɴᴏ ʜᴇʀᴏᴋᴜ :**\n"
-                    "╔════════════════════╗\n"
-                    f" ☂ **ᴘᴇɴɢɢᴜɴᴀ ᴅʏɴᴏ sᴀᴀᴛ ɪɴɪ :**\n"
-                    f"  ➽  `{AppHours}`**ᴊᴀᴍ**  `{AppMinutes}`**ᴍᴇɴɪᴛ**  "
-                    f"**|**  [`{AppPercentage}`**%**]"
-                    "\n◖════════════════════◗\n"
-                    " ☂ **sɪsᴀ ᴋᴏᴜᴛᴀ ᴅʏɴᴏ ʙᴜʟᴀɴ ɪɴɪ :**\n"
-                    f"  ➽  `{hours}`**ᴊᴀᴍ**  `{minutes}`**ᴍᴇɴɪᴛ**  "
+                    "⚙️ **ɪɴꜰᴏʀᴍᴀsɪ ᴅʏɴᴏ ʜᴇʀᴏᴋᴜ :**\n"
+                    f" 🔰 **ᴅʏɴᴏ sᴀᴀᴛ ɪɴɪ :**\n"
+                    f"   ⏰`{AppHours}`**ᴊᴀᴍ**  `{AppMinutes}`**ᴍᴇɴɪᴛ**  "
+                    f"**|**  [`{AppPercentage}`**%**]\n"
+                    f" 🔰 **ᴅʏɴᴏ ʙᴜʟᴀɴ ɪɴɪ :**\n"
+                    f"   ⏰`{hours}`**ᴊᴀᴍ**  `{minutes}`**ᴍᴇɴɪᴛ**  "
                     f"**|**  [`{percentage}`**%**]\n"
-                    f" ✠➲ **ʙᴏᴛ ᴏꜰ :** {ALIVE_NAME}  "
-                    "\n╚════════════════════╝"
+                    f" ✠➲ **ʙᴏᴛ ᴏꜰ :** {ALIVE_NAME}  " 
                     f"© **[MAIN](https://t.me/triplenineee)**")
                 await event.edit(
                     text,
@@ -900,7 +897,7 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("🔐 GROUP",
+                            Button.url("⚙️ GROUP",
                                        "**[MAIN](https://t.me/narumisupport)**")],
                     ]
                 )
@@ -923,22 +920,22 @@ with bot:
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Bantuan Dari 🔐 DRAGON-USERBOT",
+                    "Bantuan Dari ⚙️ RAZER-USERBOT",
                     text="Daftar Plugins",
                     buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
-                    " 🔐 DRAGON-USERBOT",
-                    text="""°🔐 DRAGON-USERBOT°""",
+                    " ⚙️ RAZER-USERBOT",
+                    text="""°⚙️ RAZER-USERBOT°""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "🔐 DRAGON",
+                                "⚙️ RAZER",
                                 "https://www.xxxnxxx"),
 
                             custom.Button.url(
-                                "🔐 GROUP",
+                                "⚙️ GROUP",
                                 "t.me/narumisupport")],
                         [custom.Button.url(
                             "License",
@@ -978,9 +975,9 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("🔐 ꜱᴜᴘᴘᴏʀᴛ",
+                            Button.url("⚙️ ꜱᴜᴘᴘᴏʀᴛ",
                                        "t.me/narumisupport"),
-                            Button.url("🔐 ᴄʜᴀɴɴᴇʟ",
+                            Button.url("⚙️ ᴄʜᴀɴɴᴇʟ",
                                        "t.me/inibotsaya")],
                         [custom.Button.inline(
                             "°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="open_plugin")],
