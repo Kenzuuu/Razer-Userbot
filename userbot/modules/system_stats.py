@@ -164,9 +164,9 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         await event.edit(
-            "🔐 **Bot Name :** `DRAGON-USERBOT` \n "
-            f"🔐 **Bot Versi :** `BLACK DRAGON`\n "
-            f"🔐 **Revisi:** DU.01.00 \n "
+            "🔐 **Bot Name :** `RAZER-USERBOT` \n "
+            f"🔐 **Bot Versi :** `UBOT`\n "
+            f"🔐 **Revisi:** Rz.07.00 \n "
             f"{revout}"
         )
     else:
@@ -223,13 +223,13 @@ async def pipcheck(pip):
         await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
 
 
-@register(outgoing=True, pattern=r"^\.(?:kyyalive)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:zuualive)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f" **⚡️ɴᴀᴅᴀ-ᴜsᴇʀʙᴏᴛ⚡️** \n\n"
-        f"\n__**{NADA_TEKS_KUSTOM}**__\n\n\n"
+        f" **⚡️ RAZER-USERBOT ⚡️** \n\n"
+        f"\n__**{ZHU_TEKS_KUSTOM}**__\n\n\n"
         f"╭✠╼━━━━━━━━━━━━━━━✠╮\n"
         f"◙ `Name       :` {DEFAULTUSER} \n"
         f"◙ `Username   :` @{user.username} \n"
@@ -238,7 +238,7 @@ async def amireallyalive(alive):
         f"◙ `Bot Ver    :` {BOT_VER} \n"
         f"◙ `Modules    :` {len(modules)} \n"
         f"╰✠╼━━━━━━━━━━━━━━━✠╯\n"
-        f"[ɢʀᴏᴜᴘꜱ](https://t.me/bdrlsupportt) | [ᴄʜᴀɴɴᴇʟ](https://t.me/stay_hallal) | [ᴏᴡɴᴇʀ](https://t.me/SangDappaa) | [ɢɪᴛʜᴜʙ](https://github.com/ReyyNada/Nada-Userbot)")
+        f"[ɢʀᴏᴜᴘꜱ](https://t.me/narumisupport) | [ᴄʜᴀɴɴᴇʟ](https://t.me/inibotsaya) | [ᴏᴡɴᴇʀ](https://t.me/triplenineee) | [ɢɪᴛʜᴜʙ](https://www.yotube.com)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -259,13 +259,13 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:kyyon)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:zhuon)\s?(.)?")
 async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
         f"●▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬● \n"
-        f"✾ 🤴 • `ᴏᴡɴᴇʀ    :`[ᴀɴᴀᴋ ᴛᴜʜᴀɴ](t.me/SangDappaa) \n"
+        f"✾ 🤴 • `ᴏᴡɴᴇʀ    :`[ZHU](t.me/triplenineee) \n"
         f"✾ 🖥️ • `ꜱʏꜱᴛᴇᴍ   :`Ubuntu 20.10 \n"
         f"✾ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ :`v.{version.__version__} \n"
         f"✾ 🐍 • `ᴘʏᴛʜᴏɴ   :`v.{python_version()} \n"
@@ -311,12 +311,12 @@ async def redis(alive):
         f"┣  `Username :` {user.username} \n"
         f"┣  `Telethon :` Ver {version.__version__} \n"
         f"┣  `Python   :` Ver {python_version()} \n"
-        f"┣  `Branch   :` **[MAIN](https://t.me/triplenineee)** \n"
+        f"┣  `Branch   :` **[KENZHU](https://t.me/triplenineee)** \n"
         f"┣  `Bot Ver  :` {BOT_VER} \n"
         f"┣  `Modules  :` {len(modules)} Modules \n"
         f"┣  `GitHub   :` **[MAIN](https://www.youtube.com)** \n"
         f"┣  `Support  :` **[GROUP](https://t.me/narumisupport)** \n"
-        f"┣  `Owner    :` **[DRAGON](https://t.me/triplenineee)** \n"
+        f"┣  `Owner    :` **[MASTER](https://t.me/triplenineee)** \n"
         f"┗━━━━━━━━━━━━━━━━━━━")
     if ALIVE_LOGO:
         try:
