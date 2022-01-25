@@ -1,7 +1,7 @@
 {
-  "name": "Dragon-Userbot",
-  "description": "DRAGON-USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
-  "logo": "https://telegra.ph/file/3e6ad3242d79d7f088e7d.jpg",
+  "name": "Razer-Userbot",
+  "description": "RAZER-USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
+  "logo": "https://telegra.ph/file/14462506b7fb22a8fe9ad.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -9,17 +9,19 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/Kenzuuu/Dragon-Userbot",
+  "repository": "https://github.com/Kenzuuu/Razer-Userbot",
   "telegram": "https://t.me/triplenineee",
   "success_url": "https://t.me/narumisupport",
   "stack": "container",
   "env": {
     "API_KEY": {
       "description": "Dapatkan Api Key di web my.telegram.org",
+      "value": "8620735"
       "required": true
     },
     "API_HASH": {
       "description": "Dapatkan Api Hash Di Web my.telegram.org",
+      "value": "ef2e46f13b5865f0043e4efd3eb8a556"
       "required": true
     },
      "STRING_SESSION": {
@@ -42,10 +44,12 @@
     },
     "BOTLOG_CHATID": {
       "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh : -1001234567890",
+      "value": "-1001599694313"
       "required": true
     },
     "G_BAN_LOGGER_GROUP": {
       "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh : -1001234567890",
+      "value": "-1001599694313"
       "required": true
     },
     "COUNTRY": {
@@ -60,7 +64,7 @@
     },
     "PM_AUTO_BAN": {
       "description": "PM Auto-Ban Feature Switch. Also known as the 'bleep blop, this is a bot...' module.",
-      "value": "False",
+      "value": "True",
       "required": true
     },
     "ANTI_SPAMBOT": {
@@ -86,7 +90,7 @@
     },
     "DEFAULT_BIO": {
       "description": "Default Bio Mu.",
-      "value": "🔐 Dragon-Userbot",
+      "value": "⚙️ Razer-Userbot",
       "required": false
     },
     "ALIVE_NAME": {
@@ -95,12 +99,12 @@
     },
      "ALIVE_LOGO": {
       "description": "Gambar dalam module .alive",
-      "value": "https://telegra.ph/file/e0fe38bc2cf338770343c.jpg",
+      "value": "https://telegra.ph/file/14462506b7fb22a8fe9ad.jpg",
       "required": false
     },
-    "Nada_TEKS_KUSTOM": {
+    "ZHU_TEKS_KUSTOM": {
       "description": "Kustom Pesan Alive Mu Untuk Perintah .bdrlalive (Isi Terserah)",
-      "value": "🔐 I'am Using Dragon-Userbot ",
+      "value": "⚙️ I'am Using Razer-Userbot ",
       "required": false 
     },
     "S_PACK_NAME": {
