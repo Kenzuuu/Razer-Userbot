@@ -12,7 +12,7 @@ import redis
 
 from datetime import datetime
 from speedtest import Speedtest
-from userbot import CMD_HELP, DEVS, RZR, StartTime, ALIVE_NAME
+from userbot import CMD_HELP, DEVS, StartTime, ALIVE_NAME
 from userbot.events import register
 
 absen = [
@@ -164,7 +164,7 @@ async def redis(pong):
 
 
 @register(outgoing=True, pattern="^.ping$")
-@register(incoming=True, from_users=RZR, pattern=r"^\.cping$")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cping$")
 async def pingme(pong):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
@@ -229,7 +229,7 @@ def speed_convert(size):
 
 
 @register(outgoing=True, pattern="^.pong$")
-@register(incoming=True, from_users=RZR, pattern=r"^\.cpong$")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cpong$")
 
 async def pingme(pong):
     """For .ping command, ping the userbot from any chat."""
