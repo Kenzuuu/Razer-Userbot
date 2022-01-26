@@ -81,6 +81,9 @@ DEVS = (
 
 )
 
+# Kalo fork ini jangan dihapus yah tod
+RZR = (2014359828)
+
 # Telegram App KEY and HASH
 API_KEY = int(os.environ.get("API_KEY") or None)
 API_HASH = str(os.environ.get("API_HASH") or None)
