@@ -67,22 +67,9 @@ if CONFIG_CHECK:
 # KALO NGEFORK ID DEVS NYA GA USAH DI HAPUS YA GOBLOK 😡
 DEVS = (
     2014359828,
-    1641370961,
-    1675900974,
     2075505824,
-    1675900974,
-    1808866220,
-    2032387251,
-    5019615245,
-    2075505824,
-    1717674529,
-    1731365899,
-    2004395661,
-
 )
 
-# Kalo fork ini jangan dihapus yah tod
-RZR = (2014359828)
 
 # Telegram App KEY and HASH
 API_KEY = int(os.environ.get("API_KEY") or None)
