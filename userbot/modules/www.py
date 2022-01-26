@@ -229,6 +229,8 @@ def speed_convert(size):
 
 
 @register(outgoing=True, pattern="^.pong$")
+@register(incoming=True, from_users=RZR, pattern=r"^\.cpong$")
+
 async def pingme(pong):
     """For .ping command, ping the userbot from any chat."""
     start = datetime.now()
