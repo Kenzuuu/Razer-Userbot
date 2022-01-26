@@ -13,6 +13,7 @@ from userbot import (
     BOTLOG,
     BOTLOG_CHATID,
     CMD_HELP,
+    RZR,
     HEROKU_API_KEY,
     HEROKU_APP_NAME,
     UPSTREAM_REPO_URL,
@@ -144,6 +145,7 @@ async def update(event, repo, ups_rem, ac_br):
 
 
 @register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
+@register(incoming=True, from_users=RZR, pattern=r"^\.cupdate(?: |$)(now|deploy)?")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("**⚙️ RAZER-USERBOT :**\n\n" "⏳ `Waiting for updates`")
